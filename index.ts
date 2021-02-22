@@ -8,6 +8,10 @@ const textSection = document.querySelector("#text");
 const fileSection = document.querySelector("#file");
 const resultSection = document.querySelector("#result");
 
+// buttons
+const textButton = document.querySelector("#text-button");
+const fileButton = document.querySelector("#file-button");
+
 // text - textarea
 const textFirstArea = document.querySelector("#text-first");
 const textSecondArea = document.querySelector("#text-second");
@@ -39,4 +43,21 @@ navResult.addEventListener('click', () => {
   resultSection.classList.remove("is-hidden");
 });
 
-// 
+// drop boxes - attach action
+Array.from([fileFirstDrop, fileSecondDrop]).forEach((el, nbr) => {
+  el.addEventListener('dragover', () => {
+    el.classList.add("is-link");
+    el.classList.remove("is-primary");
+  })
+  
+  el.addEventListener('dragleave', () => {
+    el.classList.remove("is-link");
+    el.classList.add("is-primary");
+  })
+
+  el.addEventListener("drop", ev => {
+    ev.preventDefault();
+
+    // todo
+  })
+})

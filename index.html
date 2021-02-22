@@ -33,18 +33,23 @@
       <p class="pb-6 is-size-3">Tekst ma być oddzielony spacją lub enterem</p>
     </div>
 
-    <div class="columns is-vcentered">
-      <div class="column">
+    <div class="columns is-vcentered is-multiline">
+      <div class="column is-6">
         <div class="has-text-centered">
           <p class="pb-4 is-size-4">Pierwszy tekst</p>
         </div>
         <textarea id="text-first" cols="30" rows="10" placeholder="Podaj pierwszy tekst" class="textarea is-primary is-medium"></textarea>
       </div>
-      <div class="column">
+      <div class="column is-6">
         <div class="has-text-centered">
           <p class="pb-4 is-size-4">Drugi tekst</p>
         </div>
         <textarea id="text-second" cols="30" rows="10" placeholder="Podaj drugi tekst" class="textarea is-primary is-medium"></textarea>
+      </div>
+
+      <!-- confirm button -->
+      <div class="column is-12 has-text-centered">
+        <button class="button is-link is-medium" id="text-button">Sprawdź</button>
       </div>
     </div>
   </div>
@@ -58,9 +63,9 @@
       <p class="pb-6 is-size-3">Wrzuć lub przeciągnij pliki</p>
     </div>
 
-    <div class="columns is-vcentered">
+    <div class="columns is-vcentered is-multiline">
       <!-- tile -->
-      <div class="column">
+      <div class="column is-6">
         <div class="has-text-centered">
           <p class="pb-4 is-size-4">Pierwszy plik</p>
         </div>
@@ -84,7 +89,7 @@
       </div>
 
       <!-- tile -->
-      <div class="column">
+      <div class="column is-6">
         <div class="has-text-centered">
           <p class="pb-4 is-size-4">Drugi plik</p>
         </div>
@@ -105,6 +110,11 @@
             </label>
           </div>
         </div>
+      </div>
+
+      <!-- confirm button -->
+      <div class="column is-12 has-text-centered">
+        <button class="button is-link is-medium" id="file-button">Sprawdź</button>
       </div>
     </div>
   </div>
