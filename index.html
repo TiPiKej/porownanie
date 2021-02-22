@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Porównanie</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+
+  <style>
+    .tile {
+      transition: all 220ms ease-in-out;
+    }
+  </style>
+</head>
+<body>
+
+<!-- navbar -->
+<nav class="navbar has-shadow is-link py-4 px-2">
+  <div class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" id="nav-text">Wrzuć tekst do porównania</a>
+      <a class="navbar-item" id="nav-file">Wrzuć pliki do porównania</a>
+      <a class="navbar-item is-hidden" id="nav-result">Rezultat</a>
+    </div>
+  </div>
+</nav>
+
+<!-- getting text -->
+<div class="section" id="text">
+  <div class="container">
+    <div class="has-text-centered">
+      <p class="pb-6 is-size-3">Tekst ma być oddzielony spacją lub enterem</p>
+    </div>
+
+    <div class="columns is-vcentered">
+      <div class="column">
+        <div class="has-text-centered">
+          <p class="pb-4 is-size-4">Pierwszy tekst</p>
+        </div>
+        <textarea id="text-first" cols="30" rows="10" placeholder="Podaj pierwszy tekst" class="textarea is-primary is-medium"></textarea>
+      </div>
+      <div class="column">
+        <div class="has-text-centered">
+          <p class="pb-4 is-size-4">Drugi tekst</p>
+        </div>
+        <textarea id="text-second" cols="30" rows="10" placeholder="Podaj drugi tekst" class="textarea is-primary is-medium"></textarea>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- getting files -->
+
+<div class="section is-hidden" id="file">
+  <div class="container">
+    <div class="has-text-centered">
+      <p class="pb-6 is-size-3">Wrzuć lub przeciągnij pliki</p>
+    </div>
+
+    <div class="columns is-vcentered">
+      <!-- tile -->
+      <div class="column">
+        <div class="has-text-centered">
+          <p class="pb-4 is-size-4">Pierwszy plik</p>
+        </div>
+        <div class="tile notification is-primary" id="file-first">
+          <!-- icon -->
+          <div class="file is-boxed has-name is-medium is-centered my-6" style="width: 100%;">
+            <label class="file-label">
+              <input type="file" class="file-input">
+              <span class="file-cta">
+                <div class="file-icon">
+                  <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDUwIDUwIiBoZWlnaHQ9IjUwcHgiIGlkPSJMYXllcl8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA1MCA1MCIgd2lkdGg9IjUwcHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxyZWN0IGZpbGw9Im5vbmUiIGhlaWdodD0iNTAiIHdpZHRoPSI1MCIvPjxwYXRoIGQ9IiAgTTMyLDM1YzAsMCw4LjMxMiwwLDkuMDk4LDBDNDUuNDYzLDM1LDQ5LDMxLjQ2Myw0OSwyNy4wOTlzLTMuNTM3LTcuOTAyLTcuOTAyLTcuOTAyYy0wLjAyLDAtMC4wMzgsMC4wMDMtMC4wNTgsMC4wMDMgIGMwLjA2MS0wLjQ5NCwwLjEwMy0wLjk5NCwwLjEwMy0xLjUwNGMwLTYuNzEtNS40MzktMTIuMTUtMTIuMTUtMTIuMTVjLTUuMjI5LDAtOS42NzIsMy4zMDktMTEuMzg2LDcuOTQxICBjLTEuMDg3LTEuMDg5LTIuNTkxLTEuNzY0LTQuMjUxLTEuNzY0Yy0zLjMxOSwwLTYuMDA5LDIuNjktNi4wMDksNi4wMDhjMCwwLjA4NSwwLjAxLDAuMTY3LDAuMDEzLDAuMjUxICBDMy42OTUsMTguOTk1LDEsMjIuMzQ0LDEsMjYuMzMxQzEsMzEuMTE5LDQuODgxLDM1LDkuNjcsMzVjMC44MjcsMCw4LjMzLDAsOC4zMywwIiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBzdHJva2Utd2lkdGg9IjIiLz48cG9seWxpbmUgZmlsbD0ibm9uZSIgcG9pbnRzPSIyMCwyOCAyNSwyMyAzMCwyOCAgICIgc3Ryb2tlPSIjMDAwMDAwIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwMDAwIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgc3Ryb2tlLXdpZHRoPSIyIiB4MT0iMjUiIHgyPSIyNSIgeTE9IjQzIiB5Mj0iMjMuMzMzIi8+PC9zdmc+" alt="Upload">
+                </div>
+                <span class="file-label">
+                  Wybierz plik
+                </span>
+              </span>
+              <span class="file-name has-text-centered" id="file-first-name">Nazwa pliku</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- tile -->
+      <div class="column">
+        <div class="has-text-centered">
+          <p class="pb-4 is-size-4">Drugi plik</p>
+        </div>
+        <div class="tile notification is-primary" id="file-second">
+          <!-- icon -->
+          <div class="file is-boxed has-name is-medium is-centered my-6" style="width: 100%;">
+            <label class="file-label">
+              <input type="file" class="file-input">
+              <span class="file-cta">
+                <div class="file-icon">
+                  <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDUwIDUwIiBoZWlnaHQ9IjUwcHgiIGlkPSJMYXllcl8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA1MCA1MCIgd2lkdGg9IjUwcHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxyZWN0IGZpbGw9Im5vbmUiIGhlaWdodD0iNTAiIHdpZHRoPSI1MCIvPjxwYXRoIGQ9IiAgTTMyLDM1YzAsMCw4LjMxMiwwLDkuMDk4LDBDNDUuNDYzLDM1LDQ5LDMxLjQ2Myw0OSwyNy4wOTlzLTMuNTM3LTcuOTAyLTcuOTAyLTcuOTAyYy0wLjAyLDAtMC4wMzgsMC4wMDMtMC4wNTgsMC4wMDMgIGMwLjA2MS0wLjQ5NCwwLjEwMy0wLjk5NCwwLjEwMy0xLjUwNGMwLTYuNzEtNS40MzktMTIuMTUtMTIuMTUtMTIuMTVjLTUuMjI5LDAtOS42NzIsMy4zMDktMTEuMzg2LDcuOTQxICBjLTEuMDg3LTEuMDg5LTIuNTkxLTEuNzY0LTQuMjUxLTEuNzY0Yy0zLjMxOSwwLTYuMDA5LDIuNjktNi4wMDksNi4wMDhjMCwwLjA4NSwwLjAxLDAuMTY3LDAuMDEzLDAuMjUxICBDMy42OTUsMTguOTk1LDEsMjIuMzQ0LDEsMjYuMzMxQzEsMzEuMTE5LDQuODgxLDM1LDkuNjcsMzVjMC44MjcsMCw4LjMzLDAsOC4zMywwIiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBzdHJva2Utd2lkdGg9IjIiLz48cG9seWxpbmUgZmlsbD0ibm9uZSIgcG9pbnRzPSIyMCwyOCAyNSwyMyAzMCwyOCAgICIgc3Ryb2tlPSIjMDAwMDAwIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwMDAwIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgc3Ryb2tlLXdpZHRoPSIyIiB4MT0iMjUiIHgyPSIyNSIgeTE9IjQzIiB5Mj0iMjMuMzMzIi8+PC9zdmc+" alt="Upload">
+                </div>
+                <span class="file-label">
+                  Wybierz plik
+                </span>
+              </span>
+              <span class="file-name has-text-centered" id="file-second-name">Nazwa pliku</span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- result -->
+<div class="section is-hidden" id="result">
+
+</div>
+
+  <script src="index.js"></script>
+</body>
+</html>
