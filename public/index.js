@@ -1,3 +1,4 @@
+"use strict";
 // nav items
 var navText = document.querySelector("#nav-text");
 var navFile = document.querySelector("#nav-file");
@@ -35,7 +36,7 @@ navResult.addEventListener('click', function () {
     resultSection.classList.remove("is-hidden");
 });
 // drop boxes - attach action
-Array.from([fileFirstDrop, fileSecondDrop]).forEach(function (el, nbr) {
+[fileFirstDrop, fileSecondDrop].forEach(function (el, nbr) {
     el.addEventListener('dragover', function () {
         el.classList.add("is-link");
         el.classList.remove("is-primary");
@@ -48,4 +49,15 @@ Array.from([fileFirstDrop, fileSecondDrop]).forEach(function (el, nbr) {
         ev.preventDefault();
         // todo
     });
+});
+// checking words
+var splitString;
+splitString = function (s) {
+    return s.replace(/\s/g, '\n').replace(/\n{2,}/g, '\n').split('\n');
+};
+textButton.addEventListener('click', function () {
+    var firstArray = splitString(textFirstArea.value);
+    var secondArray = splitString(textSecondArea.value);
+    // todo
+    console.log(firstArray, secondArray);
 });
