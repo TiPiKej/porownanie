@@ -63,6 +63,11 @@ textButton.addEventListener('click', function () {
     // left outer join - calculate and print result
     resultFirstBlock.innerHTML = outerJoin(firstArray, secondArray).join('<br>');
     resultSecondBlock.innerHTML = outerJoin(secondArray, firstArray).join('<br>');
+    // print that nothing is unique
+    [resultFirstBlock, resultSecondBlock].forEach(function (e) {
+        if (e.innerText == '')
+            e.innerText = 'Brak wyników';
+    });
     // change styles
     textSection.classList.add("is-hidden");
     fileSection.classList.add("is-hidden");

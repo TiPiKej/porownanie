@@ -79,6 +79,11 @@ textButton.addEventListener('click', () => {
   resultFirstBlock.innerHTML = outerJoin(firstArray, secondArray).join('<br>');
   resultSecondBlock.innerHTML = outerJoin(secondArray, firstArray).join('<br>');
 
+  // print that nothing is unique
+  [resultFirstBlock, resultSecondBlock].forEach((e: HTMLElement) => {
+    if (e.innerText == '') e.innerText = 'Brak wyników'
+  });
+
   // change styles
   textSection.classList.add("is-hidden");
   fileSection.classList.add("is-hidden");
