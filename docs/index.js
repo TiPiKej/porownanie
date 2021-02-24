@@ -59,6 +59,11 @@ textButton.addEventListener('click', function () {
     var secondArray = splitString(textSecondArea.value);
     // left outer join
     console.log(outerJoin(firstArray, secondArray));
+    // change styles
+    textSection.classList.add("is-hidden");
+    fileSection.classList.add("is-hidden");
+    resultSection.classList.remove("is-hidden");
+    navResult.classList.remove("is-hidden");
 });
 // functions
 splitString = function (s) {

@@ -17,7 +17,7 @@
 
 <!-- navbar -->
 <nav class="navbar has-shadow is-link py-4 px-2">
-  <div class="navbar-menu">
+  <div class="navbar-menu is-active">
     <div class="navbar-start">
       <a class="navbar-item" id="nav-text">Wrzuć tekst do porównania</a>
       <a class="navbar-item is-hidden" id="nav-file">Wrzuć pliki do porównania</a>
@@ -27,7 +27,7 @@
 </nav>
 
 <!-- getting text -->
-<div class="section" id="text">
+<div class="section is-hidden" id="text">
   <div class="container">
     <div class="has-text-centered">
       <p class="pb-6 is-size-3-tablet is-size-5-mobile">Tekst ma być oddzielony spacją lub enterem</p>
@@ -150,8 +150,20 @@ Will sea? the on glimmer you Will</textarea>
 </div>
 
 <!-- result -->
-<div class="section is-hidden" id="result">
+<div class="section " id="result">
+  <div class="container">
+    <div class="columns">
+      <!-- first box -->
+      <div class="column is-6">
+        <p class="is-size-4-tablet is-size-5-mobile">
+          Wpisy z lewej strony:
+        </p>
+      </div>
 
+      <!-- second box -->
+      <div class="column is-6">fsafsa</div>
+    </div>
+  </div>
 </div>
 
   <script src="index.js"></script>
