@@ -27,7 +27,7 @@
 </nav>
 
 <!-- getting text -->
-<div class="section is-hidden" id="text">
+<div class="section" id="text">
   <div class="container">
     <div class="has-text-centered">
       <p class="pb-6 is-size-3-tablet is-size-5-mobile">Tekst ma być oddzielony spacją lub enterem</p>
@@ -39,20 +39,7 @@
         <div class="has-text-centered">
           <p class="pb-4 is-size-4">Pierwszy tekst</p>
         </div>
-        <textarea id="text-first" cols="30" rows="10" placeholder="Podaj pierwszy tekst" class="textarea is-primary is-medium">Will you glimmer on the sea? 
-Will you fling your spear-head 
-On the shore? 
-What note ffsafwe pitch? 
-
-We have a song, 
-On the bank we fsafsafsaour arrows- 
-The loosed string tells our note: 
-
-O flight, 
-Bring her fsafsato our song. 
-She is great, 
-We measure her by the pine-trees.
-</textarea>
+        <textarea id="text-first" cols="30" rows="10" placeholder="Podaj pierwszy tekst" class="textarea is-primary is-medium"></textarea>
       </label>
 
       <!-- second textarea -->
@@ -60,20 +47,7 @@ We measure her by the pine-trees.
         <div class="has-text-centered">
           <p class="pb-4 is-size-4">Drugi tekst</p>
         </div>
-        <textarea id="text-second" cols="30" rows="10" placeholder="Podaj drugi tekst" class="textarea is-primary is-medium">pine-trees.
-the by her measure
-We great, is
-She song. our to swiftly her
-Bring xz,
-
-O note: our tells string loosed
-The arrows- our share we bank the
-On song, a have
-
-We pitch? we shafsall note
-What shore? the
-On spear-head your fling you
-Will sea? the on glimmer you Will</textarea>
+        <textarea id="text-second" cols="30" rows="10" placeholder="Podaj drugi tekst" class="textarea is-primary is-medium"></textarea>
       </label>
 
       <!-- confirm button -->
@@ -150,7 +124,7 @@ Will sea? the on glimmer you Will</textarea>
 </div>
 
 <!-- result -->
-<div class="section " id="result">
+<div class="section is-hidden" id="result">
   <div class="container">
     <div class="columns">
       <!-- first box -->
@@ -158,10 +132,20 @@ Will sea? the on glimmer you Will</textarea>
         <p class="is-size-4-tablet is-size-5-mobile">
           Wpisy z lewej strony:
         </p>
+        <p class="is-size-5-tablet is-size-6-mobile box mt-4" id="result-first">
+          Brak wyników
+        </p>
       </div>
 
       <!-- second box -->
-      <div class="column is-6">fsafsa</div>
+      <div class="column is-6">
+        <p class="is-size-4-tablet is-size-5-mobile">
+          Wpisy z prawej strony:
+        </p>
+        <p class="is-size-5-tablet is-size-6-mobile box mt-4" id="result-second">
+          Brak wyników
+        </p>
+      </div>
     </div>
   </div>
 </div>

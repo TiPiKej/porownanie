@@ -28,6 +28,10 @@ const fileSecondDrop = <HTMLElement>document.querySelector("#file-second")!;
 const fileFirstName = <HTMLElement>document.querySelector("#file-first-name")!;
 const fileSecondName = <HTMLElement>document.querySelector("#file-second-name")!;
 
+// result - info block
+const resultFirstBlock = <HTMLElement>document.querySelector("#result-first")!;
+const resultSecondBlock = <HTMLElement>document.querySelector("#result-second")!;
+
 // attach action to navbar
 navText.addEventListener('click', () => {
   textSection.classList.remove("is-hidden");
@@ -71,10 +75,9 @@ textButton.addEventListener('click', () => {
   const firstArray = splitString(textFirstArea.value);
   const secondArray = splitString(textSecondArea.value);
 
-  // left outer join
-  console.log(
-    outerJoin(firstArray, secondArray)
-  )
+  // left outer join - calculate and print result
+  resultFirstBlock.innerHTML = outerJoin(firstArray, secondArray).join('<br>');
+  resultSecondBlock.innerHTML = outerJoin(secondArray, firstArray).join('<br>');
 
   // change styles
   textSection.classList.add("is-hidden");

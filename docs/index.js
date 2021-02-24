@@ -22,6 +22,9 @@ var fileSecondDrop = document.querySelector("#file-second");
 // file - uploaded file's name
 var fileFirstName = document.querySelector("#file-first-name");
 var fileSecondName = document.querySelector("#file-second-name");
+// result - info block
+var resultFirstBlock = document.querySelector("#result-first");
+var resultSecondBlock = document.querySelector("#result-second");
 // attach action to navbar
 navText.addEventListener('click', function () {
     textSection.classList.remove("is-hidden");
@@ -57,8 +60,9 @@ navResult.addEventListener('click', function () {
 textButton.addEventListener('click', function () {
     var firstArray = splitString(textFirstArea.value);
     var secondArray = splitString(textSecondArea.value);
-    // left outer join
-    console.log(outerJoin(firstArray, secondArray));
+    // left outer join - calculate and print result
+    resultFirstBlock.innerHTML = outerJoin(firstArray, secondArray).join('<br>');
+    resultSecondBlock.innerHTML = outerJoin(secondArray, firstArray).join('<br>');
     // change styles
     textSection.classList.add("is-hidden");
     fileSection.classList.add("is-hidden");
