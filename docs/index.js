@@ -1,4 +1,7 @@
 "use strict";
+// declare functions
+var splitString;
+var outerJoin;
 // nav items
 var navText = document.querySelector("#nav-text");
 var navFile = document.querySelector("#nav-file");
@@ -51,13 +54,23 @@ navResult.addEventListener('click', function () {
     });
 });
 // checking words
-var splitString;
-splitString = function (s) {
-    return s.replace(/\s/g, '\n').replace(/\n{2,}/g, '\n').split('\n');
-};
 textButton.addEventListener('click', function () {
     var firstArray = splitString(textFirstArea.value);
     var secondArray = splitString(textSecondArea.value);
-    // todo
-    console.log(firstArray, secondArray);
+    // left outer join
+    console.log(outerJoin(firstArray, secondArray));
 });
+// functions
+splitString = function (s) {
+    return s.replace(/\s/g, '\n').replace(/\n{2,}/g, '\n').split('\n');
+};
+outerJoin = function (fArray, sArray) {
+    if (fArray === void 0) { fArray = []; }
+    if (sArray === void 0) { sArray = []; }
+    var result = [];
+    fArray.forEach(function (item) {
+        if (sArray.indexOf(item) == -1)
+            result.push(item);
+    });
+    return result;
+};

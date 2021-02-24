@@ -20,7 +20,7 @@
   <div class="navbar-menu">
     <div class="navbar-start">
       <a class="navbar-item" id="nav-text">Wrzuć tekst do porównania</a>
-      <a class="navbar-item" id="nav-file">Wrzuć pliki do porównania</a>
+      <a class="navbar-item is-hidden" id="nav-file">Wrzuć pliki do porównania</a>
       <a class="navbar-item is-hidden" id="nav-result">Rezultat</a>
     </div>
   </div>
@@ -30,11 +30,12 @@
 <div class="section" id="text">
   <div class="container">
     <div class="has-text-centered">
-      <p class="pb-6 is-size-3">Tekst ma być oddzielony spacją lub enterem</p>
+      <p class="pb-6 is-size-3-tablet is-size-5-mobile">Tekst ma być oddzielony spacją lub enterem</p>
     </div>
 
     <div class="columns is-vcentered is-multiline">
-      <div class="column is-6">
+      <!-- first textarea -->
+      <label class="column is-6">
         <div class="has-text-centered">
           <p class="pb-4 is-size-4">Pierwszy tekst</p>
         </div>
@@ -52,8 +53,10 @@ Bring her fsafsato our song.
 She is great, 
 We measure her by the pine-trees.
 </textarea>
-      </div>
-      <div class="column is-6">
+      </label>
+
+      <!-- second textarea -->
+      <label class="column is-6">
         <div class="has-text-centered">
           <p class="pb-4 is-size-4">Drugi tekst</p>
         </div>
@@ -71,7 +74,7 @@ We pitch? we shafsall note
 What shore? the
 On spear-head your fling you
 Will sea? the on glimmer you Will</textarea>
-      </div>
+      </label>
 
       <!-- confirm button -->
       <div class="column is-12 has-text-centered">

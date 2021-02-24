@@ -1,3 +1,7 @@
+// declare functions
+let splitString: (s: string) => string[];
+let outerJoin: (arrCheckValues: string[], arraCheckIfInclude: string[]) => string[];
+
 // nav items
 const navText = <HTMLElement>document.querySelector("#nav-text")!;
 const navFile = <HTMLElement>document.querySelector("#nav-file")!;
@@ -63,15 +67,27 @@ navResult.addEventListener('click', () => {
 })
 
 // checking words
-let splitString: (s: string) => string[];
-splitString = (s: string) => {
-  return s.replace(/\s/g, '\n').replace(/\n{2,}/g, '\n').split('\n');
-}
-
 textButton.addEventListener('click', () => {
   const firstArray = splitString(textFirstArea.value);
   const secondArray = splitString(textSecondArea.value);
 
-  // todo
-  console.log(firstArray, secondArray)
+  // left outer join
+  console.log(
+    outerJoin(firstArray, secondArray)
+  )
 })
+
+// functions
+splitString = (s: string) => {
+  return s.replace(/\s/g, '\n').replace(/\n{2,}/g, '\n').split('\n');
+}
+
+outerJoin = (fArray = [], sArray = []) => {
+  const result: Array<string> = [];
+
+  fArray.forEach(item => {
+    if (sArray.indexOf(item) == -1) result.push(item);
+  })
+
+  return result;
+}
