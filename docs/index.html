@@ -20,6 +20,7 @@
   <div class="navbar-menu is-active">
     <div class="navbar-start">
       <a class="navbar-item" id="nav-text">Wrzuć tekst do porównania</a>
+      <a class="navbar-item" id="nav-text-column">Wrzuć tekst z uwzględnieniem kolumn</a>
       <a class="navbar-item is-hidden" id="nav-file">Wrzuć pliki do porównania</a>
       <a class="navbar-item is-hidden" id="nav-result">Rezultat</a>
     </div>
@@ -53,6 +54,45 @@
       <!-- confirm button -->
       <div class="column is-12 has-text-centered">
         <button class="button is-link is-medium" id="text-button">Sprawdź</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- getting text with columns -->
+<div class="section is-hidden" id="text-column">
+  <div class="container">
+    <div class="has-text-centered">
+      <p class="pb-0 is-size-3-tablet is-size-5-mobile">Linie tekstu mają być oddzielone enterem</p>
+      <p class="pb-6 is-size-4-tablet is-size-6-mobile">Natomiast kolumny podzielone są spacja albo tabulatorem jeżeli taki znajduje się w zdaniu</p>
+    </div>
+
+    <div class="columns is-vcentered is-multiline">
+      <!-- first textarea -->
+      <label class="column is-6">
+        <div class="has-text-centered">
+          <p class="pb-4 is-size-4">Pierwszy tekst</p>
+        </div>
+        <textarea id="text-column-first" cols="30" rows="10" placeholder="Podaj pierwszy tekst" class="textarea is-primary is-medium"></textarea>
+        <p class="control is-expanded mt-4">
+          <input class="input" type="number" id="number-column-first" placeholder="Podaj numer kolumny">
+        </p>
+      </label>
+
+      <!-- second textarea -->
+      <label class="column is-6">
+        <div class="has-text-centered">
+          <p class="pb-4 is-size-4">Drugi tekst</p>
+        </div>
+        <textarea id="text-column-second" cols="30" rows="10" placeholder="Podaj drugi tekst" class="textarea is-primary is-medium"></textarea>
+        <p class="control is-expanded mt-4">
+          <input class="input" type="number" id="number-column-second" placeholder="Podaj numer kolumny">
+        </p>
+      </label>
+
+      <!-- confirm button -->
+      <div class="column is-12 has-text-centered">
+        <button class="button is-link is-medium" id="text-column-button">Sprawdź</button>
       </div>
     </div>
   </div>
